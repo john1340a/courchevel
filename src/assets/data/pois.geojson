@@ -1,0 +1,163 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [6.8657, 45.8326, 1850]
+      },
+      "properties": {
+        "id": "chalet-001",
+        "name": "Chalet du Mont Blanc",
+        "type": "chalet",
+        "description": "Chalet traditionnel avec vue panoramique sur le Mont Blanc. Capacité 12 personnes, sauna et jacuzzi.",
+        "altitude": 1850,
+        "capacity": 12,
+        "amenities": "Sauna, Jacuzzi, Cheminée"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [6.6339, 45.9237, 1035]
+      },
+      "properties": {
+        "id": "ski-station-001",
+        "name": "Chamonix Mont-Blanc",
+        "type": "ski_station",
+        "description": "Station de ski de renommée mondiale au pied du Mont Blanc. 115km de pistes, glacier accessible.",
+        "altitude": 1035,
+        "pistes": 115,
+        "season": "Décembre - Avril"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [6.7968, 45.9201, 2500]
+      },
+      "properties": {
+        "id": "viewpoint-001",
+        "name": "Aiguille du Midi",
+        "type": "viewpoint",
+        "description": "Point de vue exceptionnel à 3842m d'altitude, accessible par téléphérique. Vue à 360° sur les Alpes.",
+        "altitude": 3842,
+        "access": "Téléphérique"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [6.6198, 45.9167, 1200]
+      },
+      "properties": {
+        "id": "restaurant-001",
+        "name": "Le Refuge Alpin",
+        "type": "restaurant",
+        "description": "Restaurant d'altitude proposant une cuisine savoyarde traditionnelle. Spécialités : fondue, raclette, tartiflette.",
+        "altitude": 1200,
+        "cuisine": "Savoyarde",
+        "capacity": 80
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [6.6544, 45.9053, 1650]
+      },
+      "properties": {
+        "id": "chalet-002",
+        "name": "Chalet Les Arolles",
+        "type": "chalet",
+        "description": "Chalet moderne avec architecture traditionnelle. Accès ski aux pieds, 8 chambres.",
+        "altitude": 1650,
+        "capacity": 16,
+        "amenities": "Ski-in/Ski-out, Piscine intérieure"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [6.5784, 45.2892, 1450]
+      },
+      "properties": {
+        "id": "ski-station-002",
+        "name": "Les Deux Alpes",
+        "type": "ski_station",
+        "description": "Domaine skiable sur glacier, ski d'été possible. 225km de pistes, snowpark renommé.",
+        "altitude": 1650,
+        "pistes": 225,
+        "season": "Toute l'année"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [6.1256, 45.4167, 1860]
+      },
+      "properties": {
+        "id": "ski-station-003",
+        "name": "Alpe d'Huez",
+        "type": "ski_station",
+        "description": "Station soleil avec 300 jours d'ensoleillement par an. 250km de pistes, mythique montée du Tour de France.",
+        "altitude": 1860,
+        "pistes": 250,
+        "season": "Décembre - Avril"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [6.6798, 45.0403, 1550]
+      },
+      "properties": {
+        "id": "viewpoint-002",
+        "name": "Belvédère de la Meije",
+        "type": "viewpoint",
+        "description": "Point de vue spectaculaire sur le massif de la Meije et les glaciers environnants.",
+        "altitude": 2800,
+        "access": "Randonnée"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [6.8934, 45.2167, 1780]
+      },
+      "properties": {
+        "id": "chalet-003",
+        "name": "Chalet La Vanoise",
+        "type": "chalet",
+        "description": "Chalet de luxe au cœur du parc national de la Vanoise. Vue imprenable, confort 5 étoiles.",
+        "altitude": 1780,
+        "capacity": 10,
+        "amenities": "Spa privatif, Cave à vin, Chef privé sur demande"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [6.6421, 45.4167, 1450]
+      },
+      "properties": {
+        "id": "restaurant-002",
+        "name": "L'Auberge du Glacier",
+        "type": "restaurant",
+        "description": "Restaurant gastronomique étoilé au pied des glaciers. Cuisine créative inspirée des produits alpins.",
+        "altitude": 1450,
+        "cuisine": "Gastronomique",
+        "capacity": 50
+      }
+    }
+  ]
+}
