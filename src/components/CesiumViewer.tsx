@@ -21,13 +21,14 @@ export const CesiumViewer: React.FC<CesiumViewerProps> = ({ onViewerReady, child
 
       // Initialize Cesium Viewer with high-resolution basemap
       const viewer = new Cesium.Viewer(cesiumContainerRef.current, {
-        // Terrain provider for 3D elevation data
-        terrain: Cesium.Terrain.fromWorldTerrain({
-          requestWaterMask: true,
-          requestVertexNormals: true,
-        }),
+        // Terrain provider - using ArcGIS World Elevation 3D (public endpoint)
+        terrain: new Cesium.Terrain(
+          Cesium.ArcGISTiledElevationTerrainProvider.fromUrl(
+            'https://elevation3d.arcgis.com/arcgis/rest/services/WorldElevation3D/Terrain3D/ImageServer'
+          )
+        ),
 
-        // Imagery provider - using Bing Maps Aerial with Labels (high resolution)
+        // Imagery provider - using OpenStreetMap to avoid Ion token requirement
         baseLayerPicker: false,
 
         // UI configuration
@@ -43,19 +44,21 @@ export const CesiumViewer: React.FC<CesiumViewerProps> = ({ onViewerReady, child
 
         // Scene configuration
         scene3DOnly: false,
-        shadows: true,
+        shadows: false, // Performance: Disable shadows
         shouldAnimate: false,
       });
 
-      // Set imagery provider - Bing Maps Aerial WITHOUT labels (satellite pure)
+      // Set imagery provider - Esri World Imagery (Satellite)
       viewer.imageryLayers.removeAll();
-      const imageryProvider = await Cesium.IonImageryProvider.fromAssetId(2); // Asset 2 = Bing Aerial (no labels)
+      const imageryProvider = await Cesium.ArcGisMapServerImageryProvider.fromUrl(
+        'https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer'
+      );
       viewer.imageryLayers.addImageryProvider(imageryProvider);
 
-      // Enable lighting
-      viewer.scene.globe.enableLighting = true;
+      // Disable lighting for performance
+      viewer.scene.globe.enableLighting = false;
 
-      // Set time to noon (12:00 PM) for daylight
+      // Set time to noon (12:00 PM) for daylight visibility without dynamic lighting
       const currentDate = new Date();
       viewer.clock.currentTime = Cesium.JulianDate.fromDate(
         new Date(
@@ -69,9 +72,9 @@ export const CesiumViewer: React.FC<CesiumViewerProps> = ({ onViewerReady, child
       );
       viewer.clock.shouldAnimate = false;
 
-      // Configure atmosphere and fog
-      viewer.scene.globe.showGroundAtmosphere = true;
-      viewer.scene.fog.enabled = true;
+      // Configure atmosphere and fog - Disabled for performance
+      viewer.scene.globe.showGroundAtmosphere = false;
+      viewer.scene.fog.enabled = false;
       viewer.scene.fog.density = 0.0001;
 
       // Set default camera position (Courchevel)
