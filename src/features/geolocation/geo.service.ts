@@ -28,7 +28,7 @@ export class GeolocationService {
           reject(this.mapError(error));
         },
         {
-          enableHighAccuracy: true,
+          enableHighAccuracy: false, // Performance: Faster location lock (WiFi/Cell) instead of slow GPS
           timeout: 10000,
           maximumAge: 0,
         }
@@ -56,7 +56,7 @@ export class GeolocationService {
         onError?.(this.mapError(error));
       },
       {
-        enableHighAccuracy: true,
+        enableHighAccuracy: false, // Performance: Faster location
         timeout: 10000,
         maximumAge: 5000,
       }
